@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2b2bb8">
+<title>Swadhaya — Practice Test Series for Classes 8, 9 &amp; 10</title>
+<meta name="description" content="Swadhaya offers self-practice question packages and mock test series for CBSE/NCERT students of Classes 8, 9 and 10. Self study is the best help.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%232b2bb8'/><text x='50' y='68' font-size='54' font-family='sans-serif' fill='white' text-anchor='middle'>स्व</text></svg>">
+
+<style>
+  :root{
+    --bg:#f6f7fc;
+    --surface:#ffffff;
+    --ink:#1b2233;
+    --muted:#5a6478;
+    --brand:#2b2bb8;
+    --brand-dark:#1f1f93;
+    --accent:#0e9f8e;
+    --line:#e2e6f0;
+    --danger:#c0322b;
+    --radius:16px;
+    --shadow:0 1px 2px rgba(20,30,60,.05), 0 10px 28px rgba(20,30,60,.07);
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--brand)}
+  a:hover{color:var(--brand-dark)}
+
+  .wrap{max-width:1040px;margin:0 auto;padding-left:20px;padding-right:20px}
+
+  /* ---------- Header ---------- */
+  .site-head{
+    background:linear-gradient(135deg,#2424a8 0%,#4a35cf 55%,#0e9f8e 100%);
+    color:#fff;
+    padding:30px 0 26px;
+  }
+  .brand{display:flex;align-items:center;gap:16px}
+  .mark{
+    width:56px;height:56px;flex:0 0 56px;
+    border-radius:16px;
+    background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.35);
+    display:grid;place-items:center;
+    font-size:1.45rem;font-weight:700;
+    letter-spacing:.5px;
+  }
+  .brand h1{margin:0;font-size:1.6rem;letter-spacing:.3px}
+  .brand .tagline{margin:2px 0 0;font-size:.92rem;color:rgba(255,255,255,.85)}
+
+  /* ---------- Tabs ---------- */
+  .tabs-wrap{
+    position:sticky;top:0;z-index:30;
+    background:var(--surface);
+    border-bottom:1px solid var(--line);
+    box-shadow:0 4px 16px rgba(20,30,60,.06);
+  }
+  .tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:thin}
+  .tabs [role="tab"]{
+    appearance:none;background:transparent;border:0;
+    font:inherit;font-weight:600;font-size:.97rem;
+    color:var(--muted);
+    padding:16px 16px 13px;
+    cursor:pointer;
+    white-space:nowrap;
+    border-bottom:3px solid transparent;
+    transition:color .15s, background .15s, border-color .15s;
+  }
+  .tabs [role="tab"]:hover{color:var(--ink);background:#f3f5fb}
+  .tabs [role="tab"][aria-selected="true"]{color:var(--brand);border-bottom-color:var(--brand)}
+  .tabs [role="tab"]:focus-visible{outline:2px solid var(--brand);outline-offset:-3px;border-radius:8px 8px 0 0}
+
+  /* ---------- Panels ---------- */
+  .panel{padding-top:38px;padding-bottom:64px;animation:fade .25s ease both}
+  .panel[hidden]{display:none}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  h2{margin:0 0 6px;font-size:clamp(1.45rem,2.6vw,1.85rem);letter-spacing:-.2px}
+  h3{margin:0 0 8px;font-size:1.05rem}
+  .lead{color:var(--muted);font-size:1.05rem;max-width:70ch;margin:0 0 26px}
+  p{margin:0 0 14px}
+  .eyebrow{
+    display:inline-block;font-size:.76rem;font-weight:700;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:6px;
+  }
+
+  /* ---------- Cards / grid ---------- */
+  .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin:22px 0}
+  .card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px;
+    box-shadow:var(--shadow);
+  }
+  .card p:last-child{margin-bottom:0}
+  .stat{
+    font-size:1.7rem;font-weight:800;color:var(--brand);
+    line-height:1.15;display:block;margin-bottom:2px;
+  }
+  .card .sub{color:var(--muted);font-size:.93rem}
+
+  .class-card{text-align:center}
+  .class-card .num{
+    display:inline-grid;place-items:center;
+    width:60px;height:60px;border-radius:50%;
+    background:linear-gradient(135deg,var(--brand),var(--accent));
+    color:#fff;font-weight:800;font-size:1.35rem;margin-bottom:10px;
+  }
+
+  /* ---------- Lists ---------- */
+  .steps{counter-reset:s;list-style:none;padding:0;margin:18px 0;display:grid;gap:16px}
+  .steps li{position:relative;padding-left:46px;margin:0}
+  .steps li::before{
+    counter-increment:s;content:counter(s);
+    position:absolute;left:0;top:1px;
+    width:32px;height:32px;border-radius:50%;
+    background:var(--brand);color:#fff;
+    display:grid;place-items:center;
+    font-weight:700;font-size:.9rem;
+  }
+  .steps strong{display:block}
+
+  .ticks{list-style:none;padding:0;margin:14px 0;display:grid;gap:10px}
+  .ticks li{position:relative;padding-left:30px}
+  .ticks li::before{
+    content:"✓";position:absolute;left:0;top:0;
+    color:var(--accent);font-weight:800;
+  }
+
+  /* ---------- Callouts ---------- */
+  .callout{
+    background:#fff9e8;border:1px solid #f0e0ac;
+    border-radius:var(--radius);padding:16px 20px;margin:22px 0;
+  }
+  .callout.info{background:#eef4ff;border-color:#c9d9f7}
+  .callout.privacy{background:#eef8f5;border-color:#bfe3da}
+  .callout p:last-child{margin-bottom:0}
+
+  /* ---------- Forms ---------- */
+  .form-card{
+    background:var(--surface);border:1px solid var(--line);
+    border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);
+    max-width:760px;
+  }
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}
+  .form-grid .full{grid-column:1 / -1}
+  @media (max-width:660px){.form-grid{grid-template-columns:1fr}}
+
+  .field{margin-bottom:18px}
+  .field label{display:block;font-weight:600;font-size:.92rem;margin-bottom:7px}
+  .req{color:var(--danger)}
+  .hint{display:block;font-weight:400;font-size:.83rem;color:var(--muted);margin-top:2px}
+
+  input[type="text"],input[type="tel"],select,textarea{
+    width:100%;padding:12px 14px;
+    font:inherit;font-size:.97rem;color:var(--ink);
+    background:#fdfdff;
+    border:1px solid var(--line);
+    border-radius:11px;
+    transition:border-color .15s, box-shadow .15s, background .15s;
+  }
+  textarea{resize:vertical;min-height:110px}
+  input:focus,select:focus,textarea:focus{
+    outline:none;background:#fff;
+    border-color:var(--brand);
+    box-shadow:0 0 0 4px rgba(43,43,184,.13);
+  }
+  .field.invalid input,.field.invalid textarea,.field.invalid select{
+    border-color:var(--danger);background:#fffafa;
+  }
+  .field.invalid input:focus,.field.invalid textarea:focus{
+    box-shadow:0 0 0 4px rgba(192,50,43,.13);
+  }
+  .err{display:none;color:var(--danger);font-size:.84rem;margin-top:6px}
+  .field.invalid .err{display:block}
+
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:4px}
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    font:inherit;font-weight:600;font-size:.97rem;
+    padding:12px 24px;border-radius:11px;border:1px solid transparent;
+    background:var(--brand);color:#fff;cursor:pointer;
+    transition:background .15s, transform .06s, box-shadow .15s;
+    box-shadow:0 6px 16px rgba(43,43,184,.22);
+  }
+  .btn:hover{background:var(--brand-dark)}
+  .btn:active{transform:translateY(1px)}
+  .btn:focus-visible{outline:3px solid rgba(43,43,184,.35);outline-offset:2px}
+  .btn.ghost{
+    background:#fff;color:var(--brand);border-color:#c9cdf0;box-shadow:none;
+  }
+  .btn.ghost:hover{background:#f3f4ff}
+
+  /* ---------- Result box ---------- */
+  .result{
+    margin-top:24px;padding:20px;
+    background:#eef8f5;border:1px solid #bfe3da;border-radius:var(--radius);
+  }
+  .result[hidden]{display:none}
+  .result h3{margin:0 0 8px;color:#0b6b5e}
+  .result textarea{
+    margin:10px 0 12px;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:.84rem;line-height:1.55;background:#fff;
+  }
+
+  /* ---------- Footer ---------- */
+  .site-foot{
+    background:#151a2b;color:#c8cfe0;
+    padding:36px 0 44px;font-size:.93rem;
+  }
+  .site-foot a{color:#8fb8ff}
+  .site-foot .foot-brand{
+    color:#fff;font-weight:700;font-size:1.05rem;letter-spacing:.3px;margin:0 0 10px;
+  }
+  .site-foot .small{font-size:.84rem;color:#8d97ad;margin:10px 0 0;max-width:75ch}
+
+  .noscript{
+    background:#fff0f0;border:1px solid #f3c2c2;color:#8b2020;
+    padding:14px 18px;border-radius:12px;margin:20px 0;
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site-head">
+  <div class="wrap">
+    <div class="brand">
+      <div class="mark" aria-hidden="true">स्व</div>
+      <div>
+        <h1>Swadhaya</h1>
+        <p class="tagline">Self study · Self help · Self growth</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= TABS ================= -->
+<nav class="tabs-wrap" aria-label="Main navigation">
+  <div class="wrap">
+    <div class="tabs" role="tablist" aria-label="Website sections">
+      <button role="tab" id="tab-about"    aria-controls="about"    aria-selected="true"  tabindex="0">About Us</button>
+      <button role="tab" id="tab-products" aria-controls="products" aria-selected="false" tabindex="-1">Product Line</button>
+      <button role="tab" id="tab-contact"  aria-controls="contact"  aria-selected="false" tabindex="-1">Contact Us</button>
+      <button role="tab" id="tab-doubts"   aria-controls="doubts"   aria-selected="false" tabindex="-1">Doubt Clearance</button>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+  <noscript>
+    <div class="wrap"><p class="noscript"><strong>JavaScript is off.</strong> The tabs won’t switch, but all four sections are still readable if you scroll. To reach us, please enable JavaScript and use the Contact Us or Doubt Clearance form.</p></div>
+  </noscript>
+
+  <!-- ============================================================
+       TAB 1 — ABOUT US
+  ============================================================= -->
+  <section class="panel wrap" id="about" role="tabpanel" aria-labelledby="tab-about">
+    <span class="eyebrow">About Us</span>
+    <h2>We help you help yourself</h2>
+    <p class="lead">
+      We are a group of people who take pride in supporting others to achieve their
+      long-cherished dreams and goals.
+    </p>
+
+    <p>
+      Swadhaya was conceived and established in <strong>2026</strong>. We believe in
+      <em>“swadhaya”</em> — the meaning is <strong>“self study”</strong>. We want everyone to
+      perform swadhaya and improve themselves. <strong>Self help is the best help.</strong>
+    </p>
+
+    <p>
+      We don’t offer any type of coaching or tuition. Rather, we offer students a variety of
+      packages which comprise questions from every chapter of their syllabus, which they
+      practise themselves to make themselves perfect.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <span class="stat">100+</span>
+        <h3>Questions per chapter</h3>
+        <p class="sub">At least one hundred practice questions drawn from every chapter of your syllabus.</p>
+      </div>
+      <div class="card">
+        <span class="stat">3</span>
+        <h3>Mock tests per semester</h3>
+        <p class="sub">Three full sets of mock tests covering all chapters of that semester.</p>
+      </div>
+      <div class="card">
+        <span class="stat">0</span>
+        <h3>Coaching. Zero tuition.</h3>
+        <p class="sub">No lectures, no classes. Only structured practice that you drive yourself.</p>
+      </div>
+    </div>
+
+    <div class="callout privacy">
+      <p><strong>Our philosophy in one line:</strong> we don’t teach you — we give you the
+      right questions, in the right quantity, so that you teach yourself.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TAB 2 — PRODUCT LINE
+  ============================================================= -->
+  <section class="panel wrap" id="products" role="tabpanel" aria-labelledby="tab-products" hidden>
+    <span class="eyebrow">Product Line</span>
+    <h2>Practice test series</h2>
+    <p class="lead">
+      At present we offer practice test series for students of standard <strong>8th, 9th and 10th</strong>.
+    </p>
+
+    <div class="grid">
+      <div class="card class-card">
+        <span class="num">8</span>
+        <h3>Class 8</h3>
+        <p class="sub">Chapter-wise question sets + 3 full-semester mock tests</p>
+      </div>
+      <div class="card class-card">
+        <span class="num">9</span>
+        <h3>Class 9</h3>
+        <p class="sub">Chapter-wise question sets + 3 full-semester mock tests</p>
+      </div>
+      <div class="card class-card">
+        <span class="num">10</span>
+        <h3>Class 10</h3>
+        <p class="sub">Chapter-wise question sets + 3 full-semester mock tests</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:34px">How to get started</h3>
+    <ol class="steps">
+      <li>
+        <strong>Tell us what you want to practise</strong>
+        Go to the <a href="#contact" data-goto="contact">Contact Us</a> section and mention the
+        chapter name along with the subject you wish to practise.
+      </li>
+      <li>
+        <strong>We share the exam link</strong>
+        As soon as we receive your request, we send you the exam link for that chapter.
+      </li>
+      <li>
+        <strong>Practise on your own</strong>
+        Attempt the question set at your own pace, then review your answers and improve.
+      </li>
+      <li>
+        <strong>Finish with the mock tests</strong>
+        Complete three mock tests covering all chapters of the semester to check your readiness.
+      </li>
+    </ol>
+
+    <div class="callout">
+      <p><strong>Please note:</strong> chapter names should be as per <strong>CBSE / NCERT</strong>.
+      Just reach the <a href="#contact" data-goto="contact">Contact Us</a> section and mention the
+      chapter name with the subject you wish to practise — we’ll share the exam link with you.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TAB 3 — CONTACT US
+  ============================================================= -->
+  <section class="panel wrap" id="contact" role="tabpanel" aria-labelledby="tab-contact" hidden>
+    <span class="eyebrow">Contact Us</span>
+    <h2>Request a test series</h2>
+    <p class="lead">
+      If you are interested in taking the test series, share the <strong>subject name</strong> and
+      <strong>chapter names</strong> along with your <strong>name</strong> and
+      <strong>phone number</strong>. Your details go straight to our inbox.
+    </p>
+
+    <div class="callout info">
+      <p><strong>Price:</strong> normally <strong>₹50 per subject and per chapter</strong>.
+      Depending upon the need of the student, the bill can vary. Once we receive your request,
+      the offer for your particular exam is shared with you.</p>
+    </div>
+
+    <div class="form-card">
+      <form id="contactForm" novalidate>
+        <div class="form-grid">
+
+          <div class="field">
+            <label for="cName">Full name <span class="req">*</span></label>
+            <input id="cName" name="name" type="text" autocomplete="name" placeholder="e.g. Ananya Sharma">
+            <span class="err" aria-live="polite"></span>
+          </div>
+
+          <div class="field">
+            <label for="cPhone">Mobile number <span class="req">*</span></label>
+            <input id="cPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="e.g. 98765 43210">
+            <span class="err" aria-live="polite"></span>
+          </div>
+
+          <div class="field">
+            <label for="cSubject">Subject <span class="req">*</span></label>
+            <input id="cSubject" name="subject" type="text" placeholder="e.g. Science, Mathematics, Social Science">
+            <span class="err" aria-live="polite"></span>
+          </div>
+
+          <div class="field">
+            <label for="cClass">Class / Standard <span class="hint">Optional, helps us prepare faster</span></label>
+            <select id="cClass" name="klass">
+              <option value="">Select class</option>
+              <option>Class 8</option>
+              <option>Class 9</option>
+              <option>Class 10</option>
+            </select>
+            <span class="err" aria-live="polite"></span>
+          </div>
+
+          <div class="field full">
+            <label for="cChapters">Chapter name(s) — as per CBSE / NCERT <span class="req">*</span></label>
+            <textarea id="cChapters" name="chapters" rows="4"
+              placeholder="e.g. Chapter 1 – Crop Production and Management; Chapter 2 – Microorganisms: Friend and Foe"></textarea>
+            <span class="err" aria-live="polite"></span>
+          </div>
+
+        </div>
+
+        <div class="actions">
+          <button class="btn" type="submit">Email my details</button>
+          <button class="btn ghost" type="reset">Clear form</button>
+        </div>
+      </form>
+
+      <div class="result" id="contactResult" hidden>
+        <h3>✓ Your email app should have opened</h3>
+        <p>
+          Your email app has been opened with all the details already filled in.
+          Please press <strong>Send</strong> there so that it reaches us.
+        </p>
+        <p>
+          Nothing happened? <a id="contactMailLink" href="mailto:xtz@gmail.com">Click here to open your
+          email app</a>, or copy the details below and send them to us.
+        </p>
+        <textarea id="contactCopy" rows="7" readonly aria-label="Details to copy"></textarea>
+        <button class="btn ghost" type="button" data-copy="contactCopy">Copy details</button>
+      </div>
+    </div>
+
+    <div class="callout privacy" style="margin-top:28px">
+      <p><strong>Your privacy:</strong> this website does not store any data and no personal details.
+      There are no cookies, no local storage and no database. The form simply opens
+      <em>your own</em> email app with the details filled in — you press send, and the message
+      travels directly to us.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TAB 4 — DOUBT CLEARANCE
+  ============================================================= -->
+  <section class="panel wrap" id="doubts" role="tabpanel" aria-labelledby="tab-doubts" hidden>
+    <span class="eyebrow">Doubt Clearance</span>
+    <h2>Get your specific doubts cleared</h2>
+    <p class="lead">
+      Customised service — specific doubts can be cleared by us, one to one.
+    </p>
+
+    <p>
+      In the doubt clearance section, share your <strong>name</strong>, <strong>mobile number</strong>
+      and your <strong>doubt</strong> as a description. We will get back to you.
+    </p>
+
+    <div class="callout">
+      <p><strong>Please note:</strong> doubt clearances are on a <strong>chargeable basis</strong>
+      and start at <strong>Rs. 300 per hour</strong>.
+      Once the student confirms the payment details, the session is conducted
+      <strong>one to one</strong>, either through <strong>Google Meet</strong> or through
+      <strong>WhatsApp</strong>.</p>
+    </div>
+
+    <div class="form-card">
+      <form id="doubtForm" novalidate>
+        <div class="form-grid">
+
+          <div class="field">
+            <label for="dName">Full name <span class="req">*</span></label>
+            <input id="dName" name="name" type="text" autocomplete="name" placeholder="e.g. Rohan Verma">
+            <span class="err" aria-live="polite"></span>
+          </div>
+
+          <div class="field">
+            <label for="dPhone">Mobile number <span class="req">*</span></label>
+            <input id="dPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="e.g. 98765 43210">
+            <span class="err" aria-live="polite"></span>
+          </div>
+
+          <div class="field full">
+            <label for="dDoubt">Your doubt / question <span class="req">*</span></label>
+            <textarea id="dDoubt" name="doubt" rows="5"
+              placeholder="Describe your doubt clearly — subject, chapter and exactly what you are stuck on."></textarea>
+            <span class="err" aria-live="polite"></span>
+          </div>
+
+        </div>
+
+        <div class="actions">
+          <button class="btn" type="submit">Email my doubt</button>
+          <button class="btn ghost" type="reset">Clear form</button>
+        </div>
+      </form>
+
+      <div class="result" id="doubtResult" hidden>
+        <h3>✓ Your email app should have opened</h3>
+        <p>
+          Your email app has been opened with your name, mobile number and doubt already filled in.
+          Please press <strong>Send</strong> there so that it reaches us.
+        </p>
+        <p>
+          Nothing happened? <a id="doubtMailLink" href="mailto:xtz@gmail.com">Click here to open your
+          email app</a>, or copy the details below and send them to us.
+        </p>
+        <textarea id="doubtCopy" rows="7" readonly aria-label="Details to copy"></textarea>
+        <button class="btn ghost" type="button" data-copy="doubtCopy">Copy details</button>
+      </div>
+    </div>
+
+    <div class="callout privacy" style="margin-top:28px">
+      <p><strong>Your privacy:</strong> again, no data and no personal details are stored on this
+      website. Nothing is saved in your browser and nothing is kept on any server here — the
+      details are sent by you, from your own email app, directly to us.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-foot">
+  <div class="wrap">
+    <p class="foot-brand">Swadhaya</p>
+    <p>Practice test series for Classes 8, 9 &amp; 10</p>
+    <p class="small">
+      This website is fully static. It stores <strong>no data and no personal details</strong> —
+      no cookies, no local storage, no database, no analytics. The forms only open your own
+      email app so that you can send the details to us yourself.
+    </p>
+    <p class="small">© 2026 Swadhaya. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* =========================================================
+     CONFIG
+  ========================================================= */
+  var MAIL_TO = 'xtz@gmail.com';
+
+  /* =========================================================
+     TABS
+  ========================================================= */
+  var tabs   = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+  var panels = Array.prototype.slice.call(document.querySelectorAll('[role="tabpanel"]'));
+  var DEFAULT_TAB = 'about';
+
+  function panelIds() {
+    return panels.map(function (p) { return p.id; });
+  }
+
+  function activateTab(id, opts) {
+    opts = opts || {};
+    if (panelIds().indexOf(id) === -1) { id = DEFAULT_TAB; }
+
+    panels.forEach(function (p) {
+      var on = (p.id === id);
+      if (on) { p.hidden = false; } else { p.hidden = true; }
+    });
+
+    tabs.forEach(function (t) {
+      var on = (t.getAttribute('aria-controls') === id);
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      if (on && opts.focusTab) { t.focus(); }
+    });
+
+    if (opts.updateHash !== false) {
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState(null, '', '#' + id);
+      } else {
+        window.location.hash = id;
+      }
+    }
+
+    if (opts.scroll) {
+      var nav = document.querySelector('.tabs-wrap');
+      var y = nav ? (nav.getBoundingClientRect().top + window.pageYOffset) : 0;
+      window.scrollTo({ top: Math.max(0, y - 2), behavior: 'smooth' });
+    }
+  }
+
+  /* Click on a tab */
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      activateTab(tab.getAttribute('aria-controls'), { scroll: true });
+    });
+  });
+
+  /* Keyboard navigation (WAI-ARIA tabs pattern) */
+  var tablist = document.querySelector('[role="tablist"]');
+  if (tablist) {
+    tablist.addEventListener('keydown', function (e) {
+      var i = tabs.indexOf(document.activeElement);
+      if (i === -1) { return; }
+      var next = null;
+
+      if (e.key === 'ArrowRight') { next = (i + 1) % tabs.length; }
+      else if (e.key === 'ArrowLeft') { next = (i - 1 + tabs.length) % tabs.length; }
+      else if (e.key === 'Home') { next = 0; }
+      else if (e.key === 'End') { next = tabs.length - 1; }
+      else { return; }
+
+      e.preventDefault();
+      activateTab(tabs[next].getAttribute('aria-controls'), { focusTab: true });
+    });
+  }
+
+  /* In-page links like href="#contact" should switch tabs, not jump */
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest ? e.target.closest('a[href^="#"]') : null;
+    if (!link) { return; }
+    var id = link.getAttribute('href').slice(1);
+    if (panelIds().indexOf(id) !== -1) {
+      e.preventDefault();
+      activateTab(id, { scroll: true });
+    }
+  });
+
+  /* Respond to browser back/forward and direct links */
+  window.addEventListener('hashchange', function () {
+    activateTab((window.location.hash || '').replace('#', '') || DEFAULT_TAB,
+                 { updateHash: false, scroll: true });
+  });
+
+  /* Initial state from URL hash */
+  (function initTab() {
+    var initial = (window.location.hash || '').replace('#', '');
+    activateTab(initial || DEFAULT_TAB, { updateHash: !!initial, scroll: false });
+  })();
+
+  /* =========================================================
+     HELPERS
+  ========================================================= */
+  function mailtoLink(subject, body) {
+    return 'mailto:' + MAIL_TO +
+           '?subject=' + encodeURIComponent(subject) +
+           '&body='    + encodeURIComponent(body);
+  }
+
+  function setError(input, message) {
+    var field = input.closest('.field');
+    if (!field) { return; }
+    var err = field.querySelector('.err');
+    if (message) {
+      field.classList.add('invalid');
+      input.setAttribute('aria-invalid', 'true');
+      if (err) { err.textContent = message; }
+    } else {
+      field.classList.remove('invalid');
+      input.removeAttribute('aria-invalid');
+      if (err) { err.textContent = ''; }
+    }
+  }
+
+  function isPhone(value) {
+    var digits = value.replace(/[^0-9]/g, '');
+    return digits.length >= 10 && digits.length <= 15;
+  }
+
+  function requireText(input, message, minLen) {
+    var v = input.value.trim();
+    if (v.length === 0) { setError(input, message); return false; }
+    if (minLen && v.length < minLen) {
+      setError(input, 'Please enter at least ' + minLen + ' characters.');
+      return false;
+    }
+    setError(input, '');
+    return true;
+  }
+
+  function showResult(box, linkEl, copyEl, link, body) {
+    if (linkEl) { linkEl.setAttribute('href', link); }
+    if (copyEl) { copyEl.value = body; }
+    if (box) {
+      box.hidden = false;
+      box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    /* Hand over to the visitor's own email app. */
+    window.location.href = link;
+  }
+
+  /* Copy button (clipboard only — nothing is stored) */
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('[data-copy]') : null;
+    if (!btn) { return; }
+    var el = document.getElementById(btn.getAttribute('data-copy'));
+    if (!el) { return; }
+
+    var original = btn.textContent;
+    var done = function () {
+      btn.textContent = 'Copied!';
+      setTimeout(function () { btn.textContent = original; }, 2000);
+    };
+
+    el.removeAttribute('readonly');
+    el.select();
+    el.setSelectionRange(0, el.value.length);
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(el.value).then(done, function () {
+        try { document.execCommand('copy'); done(); } catch (err) {}
+      });
+    } else {
+      try { document.execCommand('copy'); done(); } catch (err) {}
+    }
+    el.setAttribute('readonly', 'readonly');
+  });
+
+  /* =========================================================
+     CONTACT FORM  →  mailto
+  ========================================================= */
+  var contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    var cName     = contactForm.elements.name;
+    var cPhone    = contactForm.elements.phone;
+    var cSubject  = contactForm.elements.subject;
+    var cClass    = contactForm.elements.klass;
+    var cChapters = contactForm.elements.chapters;
+
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var ok = true;
+      if (!requireText(cName, 'Please enter your name.', 2)) { ok = false; }
+      if (!requireText(cPhone, 'Please enter your mobile number.')) { ok = false; }
+      else if (!isPhone(cPhone.value)) {
+        setError(cPhone, 'Please enter a valid mobile number (10–15 digits).');
+        ok = false;
+      }
+      if (!requireText(cSubject, 'Please enter the subject.', 2)) { ok = false; }
+      if (!requireText(cChapters, 'Please enter at least one chapter name.', 3)) { ok = false; }
+
+      if (!ok) {
+        var firstBad = contactForm.querySelector('.field.invalid input, .field.invalid textarea');
+        if (firstBad) { firstBad.focus(); }
+        return;
+      }
+
+      var lines = [
+        'Name: '        + cName.value.trim(),
+        'Mobile: '      + cPhone.value.trim(),
+        'Subject: '     + cSubject.value.trim()
+      ];
+      if (cClass.value) { lines.push('Class: ' + cClass.value); }
+      lines.push('Chapter(s): ' + cChapters.value.trim());
+      lines.push('');
+      lines.push('---');
+      lines.push('Sent from the Swadhaya website Contact Us form.');
+      lines.push('(The website stores no data — this message is sent from my own email app.)');
+
+      var body = lines.join('\n');
+      var subject = 'Test series request — ' + cSubject.value.trim() + ' — ' + cName.value.trim();
+      var link = mailtoLink(subject, body);
+
+      showResult(
+        document.getElementById('contactResult'),
+        document.getElementById('contactMailLink'),
+        document.getElementById('contactCopy'),
+        link,
+        body
+      );
+    });
+
+    contactForm.addEventListener('reset', function () {
+      setTimeout(function () {
+        Array.prototype.forEach.call(contactForm.querySelectorAll('.field'), function (f) {
+          f.classList.remove('invalid');
+        });
+        Array.prototype.forEach.call(contactForm.querySelectorAll('.err'), function (er) {
+          er.textContent = '';
+        });
+        var box = document.getElementById('contactResult');
+        if (box) { box.hidden = true; }
+      }, 0);
+    });
+  }
+
+  /* =========================================================
+     DOUBT FORM  →  mailto
+  ========================================================= */
+  var doubtForm = document.getElementById('doubtForm');
+  if (doubtForm) {
+    var dName  = doubtForm.elements.name;
+    var dPhone = doubtForm.elements.phone;
+    var dDoubt = doubtForm.elements.doubt;
+
+    doubtForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var ok = true;
+      if (!requireText(dName, 'Please enter your name.', 2)) { ok = false; }
+      if (!requireText(dPhone, 'Please enter your mobile number.')) { ok = false; }
+      else if (!isPhone(dPhone.value)) {
+        setError(dPhone, 'Please enter a valid mobile number (10–15 digits).');
+        ok = false;
+      }
+      if (!requireText(dDoubt, 'Please describe your doubt.', 10)) { ok = false; }
+
+      if (!ok) {
+        var firstBad = doubtForm.querySelector('.field.invalid input, .field.invalid textarea');
+        if (firstBad) { firstBad.focus(); }
+        return;
+      }
+
+      var body = [
+        'Name: '   + dName.value.trim(),
+        'Mobile: ' + dPhone.value.trim(),
+        '',
+        'Doubt:',
+        dDoubt.value.trim(),
+        '',
+        '---',
+        'Sent from the Swadhaya website Doubt Clearance form.',
+        '(The website stores no data — this message is sent from my own email app.)'
+      ].join('\n');
+
+      var subject = 'Doubt clearance request — ' + dName.value.trim();
+      var link = mailtoLink(subject, body);
+
+      showResult(
+        document.getElementById('doubtResult'),
+        document.getElementById('doubtMailLink'),
+        document.getElementById('doubtCopy'),
+        link,
+        body
+      );
+    });
+
+    doubtForm.addEventListener('reset', function () {
+      setTimeout(function () {
+        Array.prototype.forEach.call(doubtForm.querySelectorAll('.field'), function (f) {
+          f.classList.remove('invalid');
+        });
+        Array.prototype.forEach.call(doubtForm.querySelectorAll('.err'), function (er) {
+          er.textContent = '';
+        });
+        var box = document.getElementById('doubtResult');
+        if (box) { box.hidden = true; }
+      }, 0);
+    });
+  }
+
+})();
+</script>
+</body>
+</html>
